@@ -4,16 +4,17 @@
 .main-wrapper{
 	padding: 0 0 0 0;
 	min-width: $min-width;
-  width: 100%;
+ 	 width: 100%;
 	position: relative;
 	overflow: hidden;
 	min-height:100%;
+	display: grid;
 	grid-template-rows: 100px auto 100px;
-	grid-template-columns: 100px auto 100px;
-	grid-template-areas:
+	grid-template-areas: 
 		"header header header"
 		"content content content"
-		"footer footer footer";
+		"footer footer footer"
+	;
 }
 .header{
 	grid-area: header;
@@ -80,9 +81,13 @@ h3{
     -webkit-order: 2;
 	flex-grow: 1;
     -webkit-flex-grow: 1;
-	background: #fff000;	
-	
+	background: #fff000;
 	grid-area: content;
+	&>.wrapper{
+		display: grid;	
+		grid-template-columns: 200px auto 300px;
+		height: 100%;
+	}
 }
 .aside{
 	background-color: red;
